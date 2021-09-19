@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import sys
+
+def extractWords(input):
+	try:
+		out = input.split('.')
+		for o in out:
+			oi = o.split('-')
+			for i in oi:
+				print(i)
+	except:
+		a = 1 # accept failure
+
+# print(sys.stdin)
+set(map(extractWords,sys.stdin))
+
+# print(fld.domain)
+
+# res = get_tld("http://some.subdomain.google.co.uk", as_object=True)

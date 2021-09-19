@@ -1,0 +1,17 @@
+#!/usr/bin/python
+from tld import get_fld
+import sys
+
+def loadTld(input):
+	try:
+		fld = get_fld(input.strip(), fix_protocol=True)
+		print(fld)
+	except:
+		a = 1 # accept failure
+
+# print(sys.stdin)
+set(map(loadTld,sys.stdin))
+
+# print(fld.domain)
+
+# res = get_tld("http://some.subdomain.google.co.uk", as_object=True)
