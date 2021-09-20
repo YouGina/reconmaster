@@ -13,6 +13,7 @@ DNScewl -l $d --prepend-list /mnt/e/contest/cleaned/vhosts.txt > cewl_out/${d}_p
 DNScewl -l $d --set-list words/${d}_words > cewl_out/${d}_words_cewl_set; 
 DNScewl -l $d --append-list words/${d}_words > cewl_out/${d}_words_append; 
 DNScewl -l $d --prepend-list words/${d}_words > cewl_out/${d}_words_prepend; 
+
 sort -T /mnt/g/tmp -u cewl_out/${d}_cewl_set -o cewl_out/${d}_cewl_set
 sort -T /mnt/g/tmp -u cewl_out/${d}_append -o cewl_out/${d}_append
 sort -T /mnt/g/tmp -u cewl_out/${d}_prepend -o cewl_out/${d}_prepend
