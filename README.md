@@ -40,7 +40,7 @@ I've been playing quite a bit with different methods, but some functionaly was s
 - masscheckandsend - resolve the generated domains, this function is later replaced with axiom
 - rundnscewl - one of my first functions which I later stopped using, as the files became to big for my vps
 
-**parseflds.sh** (run local)
+**parseflds.sh** (run local)  
 The cleanupmassdns function uses this file to do a quick resolve on the flds. If it does resolve it is later used in a new iteration to find subdomains and then create permutations again.
 
 **scan_test.sh** (run on vps)  
