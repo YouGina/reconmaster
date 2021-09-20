@@ -14,12 +14,13 @@ My biggest challenge was the lack of memory and storage space required to genera
 As this was a contest for SeucrityTrails x Amass I did keep one thread of amass running. This was going over a list of 2 letter domains using the custom wordlist I generated. This wordlist kept growing while the steps described earlier iterated.
 
 ## Scripts used
-I'll go over the scripts that I used now and try to explain them one by one:
+I'll go over the scripts that I used now and try to explain them one by one. If you don't have Axiom setup you can comment the axiom line and uncomment the line below:
 
 **find_assets.sh** (run on vps)  
 ```bash
 sort -T /mnt/dataset/tmp -u $1 -o $1
 axiom-scan $1 -m assetfinder -o assetfinder_$1
+# mkdir assetfinder_$f && cat $f | while read d; do /home/op/go/bin/assetfinder $d | tee -a assetfinder_$f/${d}.txt; done
 rm -r ~/.axiom/logs/*
 ```
 This small script takes a file as input and sends it to my axiom instances to use assetfinder to find subdomains. Mostly I used this for the big lists of generated fld's.
@@ -235,6 +236,7 @@ source ./functions.sh
 zcat $1 > ${1}.tmp
 f=${1}.tmp
 axiom-scan $f -m massdns -o massdns_$f
+# sudo /usr/bin/massdns -r /home/op/lists/resolvers.txt -o S $f -w massdns_$f
 cleanupmassdns massdns_$f
 split --bytes=200M cleaned ../split/split
 for s in $(ls ../split/split*); do
@@ -259,7 +261,7 @@ This is the endresult of all the words generated during the contest, sorted and 
 - [Amass](https://github.com/OWASP/Amass)
 - [Anew](https://github.com/tomnomnom/anew)
 - [Assetfinder](https://github.com/tomnomnom/assetfinder)
-- [Axiom](https://github.com/pry0cc/axiom)
+- [Axiom](https://github.com/pry0cc/axiom) ([See it in use](https://www.youtube.com/watch?v=t-FCvQK2Y88))
 - [DNSCewl](https://github.com/codingo/DNSCewl)
 - [Massdns](https://github.com/blechschmidt/massdns)
 - [ShuffleDNS](https://github.com/projectdiscovery/shuffledns)
