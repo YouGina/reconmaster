@@ -1,6 +1,17 @@
 # SecurityTrails x Amass ReconMaster contest
-
 [![image](https://user-images.githubusercontent.com/5002624/134020274-7050bc8b-530a-4bb3-aa5e-ffaae7a3690a.png)](https://securitytrails.com/corp/recon-master-contest-2021)
+
+## Table of contents:
+- [SecurityTrails x Amass ReconMaster contest](#securitytrails-x-amass-reconmaster-contest)
+  - [Table of contents:](#table-of-contents)
+  - [Summary](#summary)
+  - [Installation of tools:](#installation-of-tools)
+  - [Scripts used](#scripts-used)
+  - [wordlist file](#wordlist-file)
+  - [Tools used](#tools-used)
+
+
+## Summary
 
 In this little write-up I'll try to explain shortly what I did to be able to get to the ninth place of the SecurityTrails ReconMaster contest.
 
@@ -13,7 +24,29 @@ Throughouth the contest I tried to keep it as simple as possible.
 
 My biggest challenge was the lack of memory and storage space required to generate the permutations. This I solved by splitting big files into smaller chunks and and run it in batches. Also switching between my laptop and VPS running different parts of the iteration helped too. To manage this I created a bunch of custom scripts.
 
-As this was a contest for SeucrityTrails x Amass I did keep one thread of amass running. This was going over a list of 2 letter domains using the custom wordlist I generated. This wordlist kept growing while the steps described earlier iterated.
+As this was a contest for SeucrityTrails x Amass I did keep one thread of amass running. This was going over a list of 2 letter domains using the custom wordlist I generated. This 
+wordlist kept growing while the steps described earlier iterated.
+
+## Installation of tools:
+
+```sudo snap install amass```  
+```go get -u github.com/tomnomnom/anew```  
+```go get -u github.com/tomnomnom/assetfinder```  
+```GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns```  
+```GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder```  
+
+```
+git clone https://github.com/blechschmidt/massdns.git
+cd massdns
+make
+sudo make install
+```
+
+```
+git clone https://github.com/codingo/dnscewl.git
+sudo cp dnscewl/DNScewl /usr/bin/DNScewl
+```
+
 
 ## Scripts used
 I'll go over the scripts that I used now and try to explain them one by one. If you don't have Axiom setup you can comment the axiom line and uncomment the line below:
@@ -256,7 +289,7 @@ Most of the work in this script is done via axiom's massdns module, resolving la
 
 When resolving is ready the result files are cleaned up (while extracting flds' for the next iteration) and the subdomains are send in to securitytrails.
 
-## word_list file
+## wordlist file
 This is the endresult of all the words generated during the contest, sorted and made unique. Use it well.
 
 ## Tools used
@@ -269,23 +302,3 @@ This is the endresult of all the words generated during the contest, sorted and 
 - [ShuffleDNS](https://github.com/projectdiscovery/shuffledns)
 - [Subfinder](https://github.com/projectdiscovery/subfinder)
 
-
-### Installation of the tools:
-
-```sudo snap install amass```  
-```go get -u github.com/tomnomnom/anew```  
-```go get -u github.com/tomnomnom/assetfinder```  
-```GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns```  
-```GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder```  
-
-```
-git clone https://github.com/blechschmidt/massdns.git
-cd massdns
-make
-sudo make install
-```
-
-```
-git clone https://github.com/codingo/dnscewl.git
-sudo cp dnscewl/DNScewl /usr/bin/DNScewl
-```
