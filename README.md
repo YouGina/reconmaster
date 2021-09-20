@@ -15,6 +15,12 @@ As this was a contest for SeucrityTrails x Amass I did keep one thread of amass 
 
 ## Tools used
 - [Amass](https://github.com/OWASP/Amass)
+- [Anew](https://github.com/tomnomnom/anew)
 - [Assetfinder](https://github.com/tomnomnom/assetfinder)
+- [Axiom](https://github.com/pry0cc/axiom)
 - [DNSCewl](https://github.com/codingo/DNSCewl)
 - [Massdns](https://github.com/blechschmidt/massdns)
+- [ShuffleDNS](https://github.com/projectdiscovery/shuffledns)
+- [Subfinder](https://github.com/projectdiscovery/subfinder)
+
+
