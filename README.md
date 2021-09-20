@@ -1,5 +1,7 @@
 # SecurityTrails x Amass ReconMaster contest
 
+[![image](https://user-images.githubusercontent.com/5002624/134020274-7050bc8b-530a-4bb3-aa5e-ffaae7a3690a.png)](https://securitytrails.com/corp/recon-master-contest-2021)
+
 In this little write-up I'll try to explain shortly what I did to be able to get to the ninth place of the SecurityTrails ReconMaster contest.
 
 Throughouth the contest I tried to keep it as simple as possible.
