@@ -271,11 +271,11 @@ This is the endresult of all the words generated during the contest, sorted and 
 ### Installation of the tools:
 Installation of tools:
 
-`sudo snap install amass`
-`go get -u github.com/tomnomnom/anew`
-`go get -u github.com/tomnomnom/assetfinder`
-`GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns`
-`GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder`
+```sudo snap install amass```
+```go get -u github.com/tomnomnom/anew```
+```go get -u github.com/tomnomnom/assetfinder```
+```GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns```
+```GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder```
 
 ```
 git clone https://github.com/blechschmidt/massdns.git
