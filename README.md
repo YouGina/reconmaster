@@ -269,7 +269,6 @@ This is the endresult of all the words generated during the contest, sorted and 
 
 
 ### Installation of the tools:
-Installation of tools:
 
 ```sudo snap install amass```  
 ```go get -u github.com/tomnomnom/anew```  
