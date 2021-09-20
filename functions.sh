@@ -39,13 +39,13 @@ masscheckandsend() {
 
 rundnscewl() {
 	domain=$1
-	~/tools/discovery/DNSCewl/DNScewl --target-list=$domain --append-list=../../../lists/vhosts.txt > dnscewl/$domain
+	DNScewl --target-list=$domain --append-list=../../../lists/vhosts.txt > dnscewl/$domain
 	masscheckandsend dnscewl/$domain
-	~/tools/discovery/DNSCewl/DNScewl --target-list=$domain --prepend-list=../../../lists/vhosts.txt > dnscewl/$domain
+	DNScewl --target-list=$domain --prepend-list=../../../lists/vhosts.txt > dnscewl/$domain
 	masscheckandsend dnscewl/$domain
-	~/tools/discovery/DNSCewl/DNScewl --target-list=$domain --set-list=../../../lists/vhosts.txt > dnscewl/$domain	
+	DNScewl --target-list=$domain --set-list=../../../lists/vhosts.txt > dnscewl/$domain	
 	masscheckandsend dnscewl/$domain
-	~/tools/discovery/DNSCewl/DNScewl --target-list=$domain --set-list=words > dnscewl/$domain
+	DNScewl --target-list=$domain --set-list=words > dnscewl/$domain
 	masscheckandsend dnscewl/$domain
 
 	rm dnscewl/$domain

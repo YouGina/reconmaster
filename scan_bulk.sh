@@ -3,6 +3,7 @@ source ./functions.sh
 zcat $1 > ${1}.tmp
 f=${1}.tmp
 axiom-scan $f -m massdns -o massdns_$f
+# sudo /usr/bin/massdns -r /home/op/lists/resolvers.txt -o S $f -w massdns_$f
 cleanupmassdns massdns_$f
 split --bytes=200M cleaned ../split/split
 for s in $(ls ../split/split*); do
