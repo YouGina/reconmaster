@@ -15,7 +15,7 @@
 
 In this little write-up I'll try to explain shortly what I did to be able to get to the ninth place of the SecurityTrails ReconMaster contest.
 
-Throughouth the contest I tried to keep it as simple as possible.
+Throughout the contest I tried to keep it as simple as possible.
 
 * Find subdomains for not too well-known domains (using assetfinder)
 * Extract words from the discovered subdomains (split by dots and dashes; using a custom script)
